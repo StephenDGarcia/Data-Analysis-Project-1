@@ -3,6 +3,9 @@ Python Web Development Techdegree
 Project 1 - Number Guessing Game
 """
 import random
+from statistics import mean
+from statistics import mode
+from statistics import median
 
 score_list = []
 
@@ -11,7 +14,7 @@ def add_to_list(count):
 
 def start_game():
     answer = random.randint(1,100)
-    #print(answer)
+    print(answer)
     count = 0    
     print("Welcome to my Guessing Game")
     while True:
@@ -31,7 +34,7 @@ def start_game():
             elif guessed_number < answer:
                 print("It's higher, try again")
             else:
-                print("Got it! It took you {} tries! \n Mean: \n Median: \n Mode:".format(count))
+                print(f"Got it! It took you {count} tries! ")
                 add_to_list(count)
                 break
 start_game()
@@ -42,7 +45,7 @@ while True:
         start_game()
     else:
         repeat == "N"
-        print("GAME OVER, GOOD BYE")
+        print(f"GAME OVER, GOOD BYE \n Mean: {mean(score_list)} \n Median: {median(score_list)} \n Mode: {mode(score_list)}")
         break
     
         
