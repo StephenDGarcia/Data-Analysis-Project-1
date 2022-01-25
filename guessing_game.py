@@ -36,16 +36,18 @@ def start_game():
             else:
                 print(f"Got it! It took you {count} tries! ")
                 add_to_list(count)
+                repeat = input("Would you like to play again Y/N?  ")
+
+                while True:
+                    if repeat == "Y":
+                        start_game()
+                    else:
+                        repeat == "N"
+                        print(f"GAME OVER, GOOD BYE \n Mean: {mean(score_list)} \n Median: {median(score_list)} \n Mode: {mode(score_list)}")
+                        break
                 break
 start_game()
 
-repeat = input("Would you like to play again Y/N?  ")
-while True:
-    if repeat == "Y":
-        start_game()
-    else:
-        repeat == "N"
-        print(f"GAME OVER, GOOD BYE \n Mean: {mean(score_list)} \n Median: {median(score_list)} \n Mode: {mode(score_list)}")
-        break
+
     
         
